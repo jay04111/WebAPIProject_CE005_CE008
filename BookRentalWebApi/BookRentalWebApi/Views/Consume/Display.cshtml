@@ -1,0 +1,45 @@
+﻿@model IEnumerable<BookRentalWebApi.Models.Book>
+
+@{
+    ViewBag.Title = "Display";
+}
+
+<h2>Display</h2>
+
+<p>
+    @Html.ActionLink("Create New", "SendData")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.bname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.stock)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.price)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.bname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.stock)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.price)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.bid }) |
+            @Html.ActionLink("Details", "BookDetail", new { id=item.bid }) |
+            @Html.ActionLink("Delete", "DeleteData", new { id=item.bid })
+        </td>
+    </tr>
+}
+
+</table>

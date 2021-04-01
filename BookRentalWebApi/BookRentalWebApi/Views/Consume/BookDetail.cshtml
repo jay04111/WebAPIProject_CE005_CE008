@@ -1,0 +1,42 @@
+﻿@model BookRentalWebApi.Models.Book
+
+@{
+    ViewBag.Title = "BookDetail";
+}
+
+<h2>BookDetail</h2>
+
+<div>
+    <h4>Book</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.bname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.bname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.stock)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.stock)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.price)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.bid }) |
+    @Html.ActionLink("Back to List", "Display")
+</p>
